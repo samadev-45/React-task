@@ -1,28 +1,30 @@
-import { useEffect, useState } from "react";
+import { useState, useEffect } from "react";
 
-function Apifetch (){
-    const [data,currData]= useState(null);
-    useEffect(() => {
+function Apifetch() {
+  const [data, setData] = useState(null);
 
-        const fetchData = async () => {
-            let adata= await fetch("https://dummyjson.com/quotes")
-            let res = await adata.json();
-            currData(res.quotes.slice(0,10));
+  useEffect(() => {
+    const fetchData = async () => {
+      let apidata = await fetch("https://dummyjson.com/quotes");
+      let res = await apidata.json();
+      setData(res.quotes.slice(0, 10));
+    };
+    fetchData();
+  }, []);
 
-        };
-        fetchData();
-    },[]);
-    return (
-        <div>
-            {data?data.map((quote) => (
-                <p key={quote.id}>
-                    <h4>
-                        {quote.id}:{quote.quote}
-                    </h4>
-                </p>
-            ))
-        :"working on progres..."}
-        </div>
-    );
+  return (
+    <>
+      {data ? (
+        data.map((quote) => (
+          <div key={quote.id}>
+            <h4>{quote.id}: {quote.quote}</h4>
+          </div>
+        ))
+      ) : (
+        <p>Loading...</p>
+      )}
+    </>
+  );
 }
+
 export default Apifetch;
