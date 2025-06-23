@@ -1,14 +1,29 @@
 const Navbar = () => {
   return (
-    <nav style={{ color:"white",backgroundColor:"lightcoral",textAlign:"center" }}>
-      <h2>My Website</h2>
-      <ul style={{listStyleType:"none", display:"flex",justifyContent:"center",gap:"10rem"}}>
+    <div
+      style={{
+        backgroundColor: "lightcoral",
+        color: "white",
+        padding: "1rem 0",
+      }}
+    >
+      <h2 style={{ margin: 0, textAlign: "center" }}>My Website</h2>
+      <ul
+        style={{
+          listStyleType: "none",
+          display: "flex",
+          justifyContent: "center",
+          gap: "5rem",
+          padding: 0,
+          margin: "1rem 0 0 0",
+        }}
+      >
         <li>Home</li>
         <li>News</li>
         <li>Contact</li>
         <li>About</li>
       </ul>
-    </nav>
+    </div>
   );
 };
 
