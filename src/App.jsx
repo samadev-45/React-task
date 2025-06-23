@@ -1,8 +1,8 @@
 
 import Home from "./task/home";
-import Navbar from "./task/navbar";
 import Footer from "./task/footer";
 import './App.css'
+import Navbar from "./task/navbar.jsx";
 
 function App() {
   return (
